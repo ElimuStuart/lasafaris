@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri|Yatra+One&display=swap');
+/* 
+
+
+    font-family: 'Hind Siliguri', sans-serif;
+
+    font-family: 'Yatra One', cursive;
+    Wisdom Words Personal Use
+
+         #006400 dark green
+         #228B22 	 forest green
+         #8B4513 saddle brown
+         #D2691E chocolate
+         sienna #A0522D 	
+
+
+*/
+
+/* global styles */
+*, 
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    
+}
+
+body {
+    font-family: "Yatra One", cursive !important;
+    color: #333;
+}
+
+:root {
+    --main-font-color: #333;
+    --main-white: #fff;
+    --main-deep-brown-color: #8B4513;
+    --main-footer-bg-color: #4b4b4b;
+    --main-font-family: "Dry Brush", cursive !important;
+
+}
+
+section {
+    padding: 6rem 0;
+}
+
+p{
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 1.8rem !important;
+    /* color: var(--main-deep-brown-color); */
+}
+
+a {
+    text-decoration: none !important;
+    color: var(--main-white);
+}
+
+/* reusable classes */
+.btn {
+    display: inline-block;
+    transition: all 650ms;
+    border-radius: 3px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.btn:hover {
+    border: none;
+}
+
+
+
+.btn-info {
+    font-size: 1.2rem !important;
+    padding: 1rem;
+    color: var(--main-deep-brown-color);
+    border-bottom: 2px solid var(--main-deep-brown-color);
+    margin: 2rem 0 4rem 0;
+    background-color: transparent;
+}
+
+.btn-info:hover{
+    background: var(--main-deep-brown-color);
+    color: var(--main-white);
+}
+
+.custom-font {
+    font-family: var(--main-font-family);
+    color: var(--main-deep-brown-color);
+    font-size: 6.5rem;
+    line-height: 1;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.custom-font-secondary {
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-right: -5px;
+    font-size: 2.5rem;
+    line-height: .2;
+    color: var(--main-font-color);
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,.9), transparent), url(../images/slide_2.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+
+}
+
+/* header - nav toggle */
+.menu {
+    padding: 2rem 2.5rem;
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 1000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.menu .bar,
+.menu .bar::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 4rem;
+    background: var(--main-white);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition:650ms;
+}
+
+.menu .bar::after {
+    content: "menu";
+    letter-spacing: 2px;
+    margin-right: -2px;
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--main-white);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition:650ms;
+}
+
+.menu .bar::before {
+    top: -2rem;
+}
+
+.menu .bar::after {
+    top: 2rem;
+}
+
+.active .bar {
+    background: transparent;
+}
+
+.active .bar::before {
+    
+    transform: rotate(45deg);
+}
+
+.active .bar::after {
+    content: "";
+    height: 2px;
+    width: 4rem;
+    background: var(--main-white);
+    transform: rotate(-45deg);
+}
+
+.active .bar::before,
+.active .bar::after {
+    top: 0;
+}
+
+/* header - nav */
+.nav {
+    width: 100%;
+    height: 6rem;
+    line-height: 6rem;
+    position: relative;
+}
+
+.overlay {
+    background: linear-gradient(rgba(0,0,0,.95), rgba(0,0,0,.95)), url(../images/overlay.jpg) center no-repeat;
+    position: fixed;
+    background-size: cover;
+    right: 0;
+    left: 10rem;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: all 650ms;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.overlay.menu-open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.nav .overlay ul {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav .overlay ul li {
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.nav .overlay ul li a {
+    display: block;
+    font-size: 2rem;
+    transition:  all 650ms;
+}
+
+.nav .overlay ul li a:hover,
+.nav .overlay ul li a .active:hover {
+    color: #8B4513 !important;
+    
+}
+
+
+/* header - main text */
+.main-text {
+    line-height: 0;
+    color: var(--main-white);
+    margin: auto;
+    user-select: none;
+}
+
+.main-text h1 {
+    font-family: var(--main-font-family);
+    color: var(--main-deep-brown-color);
+    font-weight: 100;
+    font-size: 8rem;
+    margin-bottom: 5rem;
+}
+
+.main-text h2 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-right: -5px;
+    font-size: 2rem;
+    line-height: 1;
+    position: relative;
+}
+
+.main-btn {
+    font-size: 1.5rem;
+    border: 2px solid var(--main-deep-brown-color);
+    color: var(--main-white);
+    padding: 2rem 2.5rem;
+    letter-spacing: 3px;
+    margin-right: -3px;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.main-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    color: var(--main-white);
+
+}
+
+.main-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+    color: var(--main-white);
+
+}
+
+/* our story */
+.store {
+    background: url(../images/promo-bg.jpg) center no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 30rem;
+}
+
+/* promo */
+#promo {
+    width: 100%;
+    padding: 20rem 0;
+    color: var(--main-white);
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.9)), url(../images/black-and-white-black-and-white-boy-1299417.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.btn-contact-us {
+    font-size: 1.2rem;
+    color: var(--main-white);
+    text-transform: uppercase;
+    border: 1px solid var(--main-deep-brown-color);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.btn-contact-us:hover {
+    background-color: var(--main-deep-brown-color);
+    color: var(--main-white);
+    border: 1px solid var(--main-deep-brown-color) !important;
+    transition: all 650ms;
+}
+
+/* destinations */
+.image-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.image-group img {
+    width: 100%;
+    height: 30rem;
+}
+
+/* gallery */
+.gallery-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-gap: 10px; */
+}
+
+.gallery-img {
+    padding: 10px;
+}
+
+.gallery-img img {
+    width: 100%;
+    /* height: 30rem; */
+    filter: grayscale(1);
+}
+
+.gallery-img img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    transition: 1s;
+    cursor: pointer;
+}
+
+/* services */
+#services .icon {
+    font-size: 4rem;
+    width: 10rem;
+    height: 10rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    border-radius: 50%;
+    border: 2px solid var(--main-deep-brown-color);
+}
+
+
+
