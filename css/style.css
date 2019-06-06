@@ -176,7 +176,7 @@ header {
 }
 
 .menu .bar::after {
-    top: 2rem;
+    top: .5rem;
 }
 
 .active .bar {
